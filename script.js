@@ -53,73 +53,72 @@ Compare user to computer
 function playRound () {
 
     function compInput() {
-        let comp = Math.floor(Math.random() * 3)
+        let comp = Math.floor(Math.random() * 3);
         if (comp === 0) {
-            return 'Rock'
+            return 'Rock';
         } else if (comp === 1) {
-            return 'Paper'
+            return 'Paper';
         } else {
-            return 'Scissors'
+            return 'Scissors';
         }
     }
 
     function userInput(input) {
-        return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase()
+        return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
     }
 
-    let user = userInput(prompt("Input your selection"))
+    let user = userInput(prompt("Input your selection"));
 
     if (user === 'Rock') {
         if (compInput() === 'Rock') {
            // alert('Tie. Try again')
-            return 'tie'
+            return 'tie';
         } else if (compInput() === 'Paper') {
             //alert('You lose. Try again')
-            return 'loss'
+            return 'loss';
         } else if (compInput() === 'Scissors') {
             //alert('You win the round!')
-            return 'win'
+            return 'win';
         }
     } else if (user === 'Paper') {
         if (compInput() === 'Rock') {
             //alert('You win the round!')
-            return 'win'
+            return 'win';
         } else if (compInput() === 'Paper') {
             //alert('Tie. Try again')
-            return 'tie'
+            return 'tie';
         } else if (compInput() === 'Scissors') {
             //alert('You lose. Try again')
-            return 'loss'
+            return 'loss';
         }
     } else if (user === 'Scissors') {
         if (compInput() === 'Rock') {
            // alert('You lose. Try again')
-            return 'loss'
+            return 'loss';
         } else if (compInput() === 'Paper') {
             //alert('You win the round!')
-            return 'win'
+            return 'win';
         } else if (compInput() === 'Scissors') {
             //alert('Tie. Try again')
-            return 'tie'
+            return 'tie';
         }
     }
 }
 
 
 function game () {
-    let userWins = []
+    let userWins = [];
     for (let i = 0; i < 5; i++) {
          if (playRound() === 'win') {
-             userWins.push('win')
-             alert("You win the round!")
+             userWins.push('win');
+             alert("You win the round!");
          } else {
-             alert("You didn't win this round")
-         }
-         
+             alert("You didn't win this round");
+         }  
     }
     if (userWins.length >= 2) {
-        alert('Congratulations! You win the game!')
+        alert('Congratulations! You win the game!');
     } else {
-        alert('Sorry, you lost. Better luck next time')
+        alert('Sorry, you lost. Better luck next time');
     }
 }
