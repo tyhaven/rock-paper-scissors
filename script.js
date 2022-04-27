@@ -96,9 +96,12 @@ function playRound () {
     }
 }
 
+
 function game () {
     let userWins = []
     for (let i = 0; i < 5; i++) {
-        if
+         if (playRound === 'win') {
+             userWins.push('win')
+         }
     }
 }
