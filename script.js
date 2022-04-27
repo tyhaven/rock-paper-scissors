@@ -71,35 +71,35 @@ function playRound () {
 
     if (user === 'Rock') {
         if (compInput() === 'Rock') {
-            alert('Tie. Try again')
+           // alert('Tie. Try again')
             return 'tie'
         } else if (compInput() === 'Paper') {
-            alert('You lose. Try again')
+            //alert('You lose. Try again')
             return 'loss'
         } else if (compInput() === 'Scissors') {
-            alert('You win the round!')
+            //alert('You win the round!')
             return 'win'
         }
     } else if (user === 'Paper') {
         if (compInput() === 'Rock') {
-            alert('You win the round!')
+            //alert('You win the round!')
             return 'win'
         } else if (compInput() === 'Paper') {
-            alert('Tie. Try again')
+            //alert('Tie. Try again')
             return 'tie'
         } else if (compInput() === 'Scissors') {
-            alert('You lose. Try again')
+            //alert('You lose. Try again')
             return 'loss'
         }
     } else if (user === 'Scissors') {
         if (compInput() === 'Rock') {
-            alert('You lose. Try again')
+           // alert('You lose. Try again')
             return 'loss'
         } else if (compInput() === 'Paper') {
-            alert('You win the round!')
+            //alert('You win the round!')
             return 'win'
         } else if (compInput() === 'Scissors') {
-            alert('Tie. Try again')
+            //alert('Tie. Try again')
             return 'tie'
         }
     }
@@ -109,11 +109,17 @@ function playRound () {
 function game () {
     let userWins = []
     for (let i = 0; i < 5; i++) {
-         if (playRound === 'win') {
+         if (playRound() === 'win') {
              userWins.push('win')
+             alert("You win the round!")
+         } else {
+             alert("You didn't win this round")
          }
-         if (userWins.length >= 2) {
-             alert('Congratulations! You win the game!')
-         }
+         
+    }
+    if (userWins.length >= 2) {
+        alert('Congratulations! You win the game!')
+    } else {
+        alert('Sorry, you lost. Better luck next time')
     }
 }
