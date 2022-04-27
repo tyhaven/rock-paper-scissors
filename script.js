@@ -53,7 +53,7 @@ function userInput(input) {
 let comp = compInput()
 let user = userInput("Rock")
 
-function (compChoice, userChoice) {
+function compare (compChoice, userChoice) {
     if (userChoice === 'Rock') {
         if (compChoice === 'Rock') {
             return 'Tie! Try again'
