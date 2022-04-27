@@ -35,49 +35,70 @@ Compare user to computer
             comp win
 */
 
-function compInput() {
-    let comp = Math.floor(Math.random() * 3)
-    if (comp === 0) {
-        return 'Rock'
-    } else if (comp === 1) {
-        return 'Paper'
-    } else {
-        return 'Scissors'
-    }
-}
+// function compInput() {
+//     let comp = Math.floor(Math.random() * 3)
+//     if (comp === 0) {
+//         return 'Rock'
+//     } else if (comp === 1) {
+//         return 'Paper'
+//     } else {
+//         return 'Scissors'
+//     }
+// }
 
-function userInput(input) {
-    return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase()
-}
+// function userInput(input) {
+//     return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase()
+// }
 
 function playRound () {
+
+    function compInput() {
+        let comp = Math.floor(Math.random() * 3)
+        if (comp === 0) {
+            return 'Rock'
+        } else if (comp === 1) {
+            return 'Paper'
+        } else {
+            return 'Scissors'
+        }
+    }
+
+    function userInput(input) {
+        return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase()
+    }
 
     let user = userInput(prompt("Input your selection"))
 
     if (user === 'Rock') {
         if (compInput() === 'Rock') {
-            return 'Tie! Try again'
+            return 'tie'
         } else if (compInput() === 'Paper') {
-            return 'You lose! Try again'
+            return 'loss'
         } else if (compInput() === 'Scissors') {
-            return 'You win! Congratulations'
+            return 'win'
         }
     } else if (user === 'Paper') {
         if (compInput() === 'Rock') {
-            return 'You win! Congratulations'
+            return 'win'
         } else if (compInput() === 'Paper') {
-            return 'Tie! Try again'
+            return 'tie'
         } else if (compInput() === 'Scissors') {
-            return 'You lose! Try again'
+            return 'loss'
         }
     } else if (user === 'Scissors') {
         if (compInput() === 'Rock') {
-            return 'You lose! Try again'
+            return 'loss'
         } else if (compInput() === 'Paper') {
-            return 'You win! Congratulations'
+            return 'win'
         } else if (compInput() === 'Scissors') {
-            return 'Tie! Try again'
+            return 'tie'
         }
     }
 }
 
+function game () {
+    let userWins = []
+    for (let i = 0; i < 5; i++) {
+        if
+    }
+}
