@@ -50,5 +50,33 @@ function userInput(input) {
     return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase()
 }
 
-let user = userInput("Doesn't matter right now")
+let comp = compInput()
+let user = userInput("Rock")
 
+function (compChoice, userChoice) {
+    if (userChoice === 'Rock') {
+        if (compChoice === 'Rock') {
+            return 'Tie! Try again'
+        } else if (compChoice === 'Paper') {
+            return 'You lose! Try again'
+        } else if (compChoice === 'Scissors') {
+            return 'You win! Congratulations'
+        }
+    } else if (userChoice === 'Paper') {
+        if (compChoice === 'Rock') {
+            return 'You win! Congratulations'
+        } else if (compChoice === 'Paper') {
+            return 'Tie! Try again'
+        } else if (compChoice === 'Scissors') {
+            return 'You lose! Try again'
+        }
+    } else if (userChoice === 'Scissors') {
+        if (compChoice === 'Rock') {
+            return 'You lose! Try again'
+        } else if (compChoice === 'Paper') {
+            return 'You win! Congratulations'
+        } else if (compChoice === 'Scissors') {
+            return 'Tie! Try again'
+        }
+    }
+}
