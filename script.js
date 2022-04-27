@@ -46,3 +46,9 @@ function compInput() {
     }
 }
 
+function userInput(input) {
+    return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase()
+}
+
+let user = userInput("Doesn't matter right now")
+
