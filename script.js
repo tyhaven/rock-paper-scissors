@@ -50,33 +50,34 @@ function userInput(input) {
     return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase()
 }
 
-let comp = compInput()
-let user = userInput("Rock")
+function playRound () {
 
-function compare (compChoice, userChoice) {
-    if (userChoice === 'Rock') {
-        if (compChoice === 'Rock') {
+    let user = userInput(prompt("Input your selection"))
+
+    if (user === 'Rock') {
+        if (compInput() === 'Rock') {
             return 'Tie! Try again'
-        } else if (compChoice === 'Paper') {
+        } else if (compInput() === 'Paper') {
             return 'You lose! Try again'
-        } else if (compChoice === 'Scissors') {
+        } else if (compInput() === 'Scissors') {
             return 'You win! Congratulations'
         }
-    } else if (userChoice === 'Paper') {
-        if (compChoice === 'Rock') {
+    } else if (user === 'Paper') {
+        if (compInput() === 'Rock') {
             return 'You win! Congratulations'
-        } else if (compChoice === 'Paper') {
+        } else if (compInput() === 'Paper') {
             return 'Tie! Try again'
-        } else if (compChoice === 'Scissors') {
+        } else if (compInput() === 'Scissors') {
             return 'You lose! Try again'
         }
-    } else if (userChoice === 'Scissors') {
-        if (compChoice === 'Rock') {
+    } else if (user === 'Scissors') {
+        if (compInput() === 'Rock') {
             return 'You lose! Try again'
-        } else if (compChoice === 'Paper') {
+        } else if (compInput() === 'Paper') {
             return 'You win! Congratulations'
-        } else if (compChoice === 'Scissors') {
+        } else if (compInput() === 'Scissors') {
             return 'Tie! Try again'
         }
     }
 }
+
