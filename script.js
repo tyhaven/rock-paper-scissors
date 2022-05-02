@@ -1,5 +1,16 @@
 
 
+    let buttons = document.querySelectorAll('button')
+    
+    buttons.forEach(button => { 
+        button.addEventListener('click', () => {
+            return button.textContent
+        })
+    });
+
+
+
+
 function playRound () {
 
     function compInput() {
@@ -13,9 +24,12 @@ function playRound () {
         }
     }
 
+   
+
     function userInput(input) {
         return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
     }
+
 
     let user = userInput(prompt("Input your selection"));
 
