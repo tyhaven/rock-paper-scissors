@@ -1,14 +1,20 @@
 
 
-    let user = ''
+let user = ''
+
+  function getUserInput () { 
     let buttons = document.querySelectorAll('button')
-    
-    buttons.forEach(button => { 
+       buttons.forEach(button => { 
         button.addEventListener('click', () => {
             user = button.textContent
         })
     });
+}
 
+function test() {
+    let text = document.querySelector('#result')
+    text.textContent = "this is a test"
+}
 
 
 
@@ -23,12 +29,6 @@ function playRound () {
         } else {
             return 'Scissors';
         }
-    }
-
-   
-
-    function userInput(input) {
-        return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
     }
 
     if (user === 'Rock') {
