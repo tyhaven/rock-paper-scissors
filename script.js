@@ -1,49 +1,4 @@
-/* Algorithm
-Generate computer input
-    math.random 0 - 2
-    assign 0-2 to rock, paper, scissors
-    store in variable
-Capture user input
-    store in variable
-Compare user to computer
-    if user = rock
-        if comp = rock
-            tie
-        if comp = paper
-            comp win
-        if comp = scissors
-            user win
-    
-    if user = scissors
-        if comp = rock
-            user win
-        if comp = paper
-            comp win
-        if comp = scissors
-            tie
-    if user = paper
-        if comp = rock
-            user win
-        if comp = paper
-            tie
-        if comp = scissors
-            comp win
-*/
 
-// function compInput() {
-//     let comp = Math.floor(Math.random() * 3)
-//     if (comp === 0) {
-//         return 'Rock'
-//     } else if (comp === 1) {
-//         return 'Paper'
-//     } else {
-//         return 'Scissors'
-//     }
-// }
-
-// function userInput(input) {
-//     return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase()
-// }
 
 function playRound () {
 
@@ -102,14 +57,27 @@ function playRound () {
 
 
 function game () {
-    let userWins = [];
+    let userWins = 0
+    let compWins = 0
+    
     for (let i = 0; i < 5; i++) {
-         if (playRound() === 'win') {
-             userWins.push('win');
-             alert("You win the round!");
-         } else {
-             alert("You didn't win this round");
-         }  
+
+        if (userWins === 3) {
+            return "You win"
+        } else if (compWins === 3) {
+            return "You lose"
+        } else {
+            if (playRound() === 'win') {
+                console.log('win')
+                userWins++
+                alert("You win the round!");
+            } else if (playRound() === 'lose') {
+                console.log('loss')
+                compWins++
+            } else {
+                console.log('tie')
+            }
+        }
     }
     if (userWins.length >= 2) {
         alert('Congratulations! You win the game!');
