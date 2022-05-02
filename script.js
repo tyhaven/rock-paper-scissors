@@ -67,21 +67,23 @@ function game () {
         } else if (compWins === 3) {
             return "You lose"
         } else {
-            if (playRound() === 'win') {
-                console.log('win')
+            let temp = playRound()
+            if (temp === 'win') {
+                console.log(temp)
                 userWins++
-                alert("You win the round!");
-            } else if (playRound() === 'lose') {
-                console.log('loss')
+            } else if (temp === 'loss') {
+                console.log(temp)
                 compWins++
             } else {
-                console.log('tie')
+                console.log(temp)
             }
         }
     }
-    if (userWins.length >= 2) {
+    if (userWins > compWins) {
         alert('Congratulations! You win the game!');
-    } else {
+    } else if (compWins > userWins) {
         alert('Sorry, you lost. Better luck next time');
+    } else {
+        alert('Tie')
     }
 }
