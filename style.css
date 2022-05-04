@@ -10,28 +10,47 @@ h1 {
     padding-bottom: 100px;
 }
 
-.input {
+.main {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
+}
 
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .name {
     font-size: xx-large;
     font-weight: 900;
+    margin-bottom: 30px;
+}
+
+.score {
+    font-size: x-large;
+    font-weight: 800;
 }
 
 #select {
     margin: 30px;
 }
 
-.secondRow {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
+
 .buttons {
     display: flex;
     justify-content: center;
