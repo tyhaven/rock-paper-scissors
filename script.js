@@ -4,6 +4,7 @@
     let body = document.body
     element.addEventListener('click', () =>{
         body.classList.toggle('darkMode')
+
     })
 
 //blank variable to take user selection
@@ -44,31 +45,41 @@ function playRound () {
     }
 
     let compIn = compInput()
+    let winCase = ''
 
     //Compare user and comp input and return win state for user
     if (user === 'Rock') {
         if (compIn === 'Rock') {
-            text.textContent = 'tie';
+            text.textContent = "It's a tie";
+            winCase = 'tie'
         } else if (compIn === 'Paper') {
-            text.textContent = 'loss';
+            text.textContent = `You lose. ${compIn} beats ${user}`;
+            winCase = 'loss'
         } else if (compIn === 'Scissors') {
-            text.textContent = 'win';
+            text.textContent = `You Win! ${user} beats ${compIn}`;
+            winCase = 'win'
         }
     } else if (user === 'Paper') {
         if (compIn === 'Rock') {
-            text.textContent = 'win';
+            text.textContent = `You Win! ${user} beats ${compIn}`;
+            winCase = 'win'
         } else if (compIn === 'Paper') {
-            text.textContent = 'tie';
+            text.textContent = "It's a tie";
+            winCase = 'tie'
         } else if (compIn === 'Scissors') {
-            text.textContent = 'loss';
+            text.textContent = `You lose. ${compIn} beats ${user}`;
+            winCase = 'loss'
         }
     } else if (user === 'Scissors') {
         if (compIn === 'Rock') {
-           text.textContent = 'loss';
+           text.textContent = `You lose. ${compIn} beats ${user}`;
+           winCase = 'loss'
         } else if (compIn === 'Paper') {
-            text.textContent = 'win';
+            text.textContent = `You Win! ${user} beats ${compIn}`;
+            winCase = 'win'
         } else if (compIn === 'Scissors') {
-            text.textContent = 'tie';
+            text.textContent = "It's a tie";
+            winCase = 'tie'
         }
     }
 
@@ -77,16 +88,17 @@ function playRound () {
     let comp = document.getElementById('comp')
     comp.textContent = count2
 
-        if (text.textContent === 'tie') {
+        if (winCase === 'tie') {
             return
-        } else if (text.textContent === 'loss') {
+        } else if (winCase === 'loss') {
             comp.textContent = ++count2
-        } else if (text.textContent === 'win') {
+        } else if (winCase === 'win') {
             player.textContent = ++count1
         }
 
         let btn = document.createElement('button')
         btn.classList.add('newGame')
+        btn.classList.add('btnStyle')
         btn.addEventListener('click', () => {
             count1 = 0
             count2 = 0
@@ -98,9 +110,7 @@ function playRound () {
 
         if(count1 === 5) {
             text.textContent = "You Win The Game!!!"
-            btn.classList.add('newGame');
             btn.textContent = 'Play again'
-            
             center.appendChild(btn)
         }  else if (count2 === 5) {
             text.textContent = 'Sorry, you lost the game:('
