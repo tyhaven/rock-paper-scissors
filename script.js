@@ -12,6 +12,7 @@
 let user = ''
 
     let text = document.querySelector('#result')
+    let center = document.querySelector(".center")
 
     //assign R, P, or S to user variable
     let buttons = document.querySelectorAll('button')
@@ -73,13 +74,13 @@ function playRound () {
     comp.textContent = count2
 
     
-        //Cehck if won game, else increase round count by one
-     if(count1 === 5) {
-         text.textContent = "You Win The Game!!!"
-     }  else if (count2 === 5) {
-         text.textContent = 'Sorry, you lost the game:('
-     } else {
-        
+        //Check if won game, else increase round count by one
+    //  if(count1 === 5) {
+    //      text.textContent = "You Win The Game!!!"
+    //  }  else if (count2 === 5) {
+    //      text.textContent = 'Sorry, you lost the game:('
+    //  } 
+     
         if (text.textContent === 'tie') {
             return
         } else if (text.textContent === 'loss') {
@@ -87,5 +88,20 @@ function playRound () {
         } else if (text.textContent === 'win') {
             player.textContent = ++count1
         }
+
+
+        if(count1 === 5) {
+            text.textContent = "You Win The Game!!!"
+        }  else if (count2 === 5) {
+            text.textContent = 'Sorry, you lost the game:('
+        } 
+     
+
+
+
+
      }
-}
+
+     
+     
+
