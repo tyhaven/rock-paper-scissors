@@ -1,12 +1,10 @@
 
+    //toggle dark mode
     let element = document.querySelector('input')
     let body = document.body
     element.addEventListener('click', () =>{
         body.classList.toggle('darkMode')
     })
-
-
-
 
 //blank variable to take user selection
 let user = ''
@@ -29,6 +27,10 @@ let user = ''
 
 function playRound () {
 
+    if (count1 >= 5 || count2 >= 5) {
+        return
+    } else {
+
     // generate number and assign it to rock, paper, or scissors
     function compInput() {
         let comp = Math.floor(Math.random() * 3);
@@ -40,7 +42,9 @@ function playRound () {
             return 'Scissors';
         }
     }
+
     let compIn = compInput()
+
     //Compare user and comp input and return win state for user
     if (user === 'Rock') {
         if (compIn === 'Rock') {
@@ -73,14 +77,6 @@ function playRound () {
     let comp = document.getElementById('comp')
     comp.textContent = count2
 
-    
-        //Check if won game, else increase round count by one
-    //  if(count1 === 5) {
-    //      text.textContent = "You Win The Game!!!"
-    //  }  else if (count2 === 5) {
-    //      text.textContent = 'Sorry, you lost the game:('
-    //  } 
-     
         if (text.textContent === 'tie') {
             return
         } else if (text.textContent === 'loss') {
@@ -89,18 +85,23 @@ function playRound () {
             player.textContent = ++count1
         }
 
-
         if(count1 === 5) {
             text.textContent = "You Win The Game!!!"
+            let btn = document.createElement('button')
+            btn.classList.add('newGame')
+            btn.textContent = 'Play again'
+            
+            center.appendChild(btn)
         }  else if (count2 === 5) {
             text.textContent = 'Sorry, you lost the game:('
+            let btn = document.createElement('button')
+            btn.classList.add('newGame')
+            btn.textContent = 'Try again'
+            center.appendChild(btn)
         } 
      
-
-
-
-
-     }
+    }
+}
 
      
      
