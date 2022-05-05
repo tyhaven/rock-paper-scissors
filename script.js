@@ -1,4 +1,12 @@
 
+    let element = document.querySelector('input')
+    let body = document.body
+    element.addEventListener('click', () =>{
+        body.classList.toggle('darkMode')
+    })
+
+
+
 
 //blank variable to take user selection
 let user = ''
