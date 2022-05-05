@@ -8,7 +8,7 @@ body {
 
 .darkMode {
     background-color: rgb(97, 97, 97);
-    color: white;
+    color: rgb(235, 235, 235);
 }
 
 .head {
@@ -75,6 +75,7 @@ h1 {
 }
 
 button {
+
     transition: .1s ease-in-out
 }
 

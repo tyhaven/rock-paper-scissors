@@ -85,17 +85,25 @@ function playRound () {
             player.textContent = ++count1
         }
 
+        let btn = document.createElement('button')
+        btn.classList.add('newGame')
+        btn.addEventListener('click', () => {
+            count1 = 0
+            count2 = 0
+            player.textContent = 0
+            comp.textContent = 0
+            text.textContent = ''
+            center.removeChild(btn)
+        });
+
         if(count1 === 5) {
             text.textContent = "You Win The Game!!!"
-            let btn = document.createElement('button')
-            btn.classList.add('newGame')
+            btn.classList.add('newGame');
             btn.textContent = 'Play again'
             
             center.appendChild(btn)
         }  else if (count2 === 5) {
             text.textContent = 'Sorry, you lost the game:('
-            let btn = document.createElement('button')
-            btn.classList.add('newGame')
             btn.textContent = 'Try again'
             center.appendChild(btn)
         } 
