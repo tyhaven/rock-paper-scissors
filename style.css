@@ -7,7 +7,7 @@ body {
 }
 
 .darkMode {
-    background-color: rgb(97, 97, 97);
+    background-color: rgb(53, 53, 53);
     color: rgb(235, 235, 235);
 }
 
@@ -85,7 +85,6 @@ button {
 .btnStyle {
     width: 80px;
     height: 80px;
-    border: 2px solid rgb(56, 157, 225);
     color: rgb(235, 235, 235);
 
 }
@@ -93,9 +92,31 @@ button {
 
 button:hover {
     transform:scale(1.1);
+}
+
+#one {
+    border: 2px solid rgb(56, 157, 225);
+}
+
+#two {
+    border: 2px solid rgb(223, 209, 88);
+}
+
+#three {
+    border: 2px solid rgb(225, 56, 56);
+}
+
+#one:hover {
     box-shadow: 0 0 8px 1px rgb(40, 147, 219);
 }
 
+#two:hover {
+    box-shadow: 0 0 8px 1px rgb(227, 215, 81);
+}
+
+#three:hover {
+    box-shadow: 0 0 8px 1px rgb(219, 40, 40);
+}
 .newGame {
     margin: 20px;
     padding: 5px;
