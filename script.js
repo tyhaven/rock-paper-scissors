@@ -1,9 +1,13 @@
 
     //toggle dark mode
     let element = document.querySelector('input')
+    let colorButtons = document.querySelectorAll('button')
     let body = document.body
     element.addEventListener('click', () =>{
         body.classList.toggle('darkMode')
+        for (let i = 0; i < colorButtons.length; i++) {
+            colorButtons[i].classList.toggle('light')
+        }
 
     })
 
